@@ -1,0 +1,168 @@
+
+[diabetes / baseline_median]
+Traceback (most recent call last):
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 581, in main
+    history = run_search(
+        X_train, y_train, numeric_features,
+        categorical_features, config, outer_fold, dataset,
+        history_rows,
+    )
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 210, in run_search
+    history.append(
+    ^^^^^^^
+NameError: name 'history' is not defined
+
+
+[diabetes / mean_imputation]
+Traceback (most recent call last):
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 581, in main
+    history = run_search(
+        X_train, y_train, numeric_features,
+        categorical_features, config, outer_fold, dataset,
+        history_rows,
+    )
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 210, in run_search
+    history.append(
+    ^^^^^^^
+NameError: name 'history' is not defined
+
+
+[diabetes / pca_median]
+Traceback (most recent call last):
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 581, in main
+    history = run_search(
+        X_train, y_train, numeric_features,
+        categorical_features, config, outer_fold, dataset,
+        history_rows,
+    )
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 210, in run_search
+    history.append(
+    ^^^^^^^
+NameError: name 'history' is not defined
+
+
+[diabetes / svd_median]
+Traceback (most recent call last):
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 581, in main
+    history = run_search(
+        X_train, y_train, numeric_features,
+        categorical_features, config, outer_fold, dataset,
+        history_rows,
+    )
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 210, in run_search
+    history.append(
+    ^^^^^^^
+NameError: name 'history' is not defined
+
+
+[breast_cancer / baseline_median]
+Traceback (most recent call last):
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 581, in main
+    history = run_search(
+        X_train, y_train, numeric_features,
+        categorical_features, config, outer_fold, dataset,
+        history_rows,
+    )
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 210, in run_search
+    history.append(
+    ^^^^^^^
+NameError: name 'history' is not defined
+
+
+[breast_cancer / mean_imputation]
+Traceback (most recent call last):
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 581, in main
+    history = run_search(
+        X_train, y_train, numeric_features,
+        categorical_features, config, outer_fold, dataset,
+        history_rows,
+    )
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 210, in run_search
+    history.append(
+    ^^^^^^^
+NameError: name 'history' is not defined
+
+
+[breast_cancer / pca_median]
+Traceback (most recent call last):
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 581, in main
+    history = run_search(
+        X_train, y_train, numeric_features,
+        categorical_features, config, outer_fold, dataset,
+        history_rows,
+    )
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 210, in run_search
+    history.append(
+    ^^^^^^^
+NameError: name 'history' is not defined
+
+
+[breast_cancer / svd_median]
+Traceback (most recent call last):
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 581, in main
+    history = run_search(
+        X_train, y_train, numeric_features,
+        categorical_features, config, outer_fold, dataset,
+        history_rows,
+    )
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 210, in run_search
+    history.append(
+    ^^^^^^^
+NameError: name 'history' is not defined
+
+
+[heart_disease / baseline_median]
+Traceback (most recent call last):
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 581, in main
+    history = run_search(
+        X_train, y_train, numeric_features,
+        categorical_features, config, outer_fold, dataset,
+        history_rows,
+    )
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 210, in run_search
+    history.append(
+    ^^^^^^^
+NameError: name 'history' is not defined
+
+
+[heart_disease / mean_imputation]
+Traceback (most recent call last):
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 581, in main
+    history = run_search(
+        X_train, y_train, numeric_features,
+        categorical_features, config, outer_fold, dataset,
+        history_rows,
+    )
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 210, in run_search
+    history.append(
+    ^^^^^^^
+NameError: name 'history' is not defined
+
+
+[heart_disease / pca_median]
+Traceback (most recent call last):
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 581, in main
+    history = run_search(
+        X_train, y_train, numeric_features,
+        categorical_features, config, outer_fold, dataset,
+        history_rows,
+    )
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 210, in run_search
+    history.append(
+    ^^^^^^^
+NameError: name 'history' is not defined
+
+
+[heart_disease / svd_median]
+Traceback (most recent call last):
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 581, in main
+    history = run_search(
+        X_train, y_train, numeric_features,
+        categorical_features, config, outer_fold, dataset,
+        history_rows,
+    )
+  File "C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_expanded_search.py", line 210, in run_search
+    history.append(
+    ^^^^^^^
+NameError: name 'history' is not defined
+

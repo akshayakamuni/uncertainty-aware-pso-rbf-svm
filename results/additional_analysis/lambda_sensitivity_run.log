@@ -1,0 +1,66 @@
+Finished diabetes | baseline_median | fold 1
+Finished diabetes | baseline_median | fold 2
+Finished diabetes | baseline_median | fold 3
+Finished diabetes | baseline_median | fold 4
+Finished diabetes | baseline_median | fold 5
+Finished diabetes | mean_imputation | fold 1
+Finished diabetes | mean_imputation | fold 2
+Finished diabetes | mean_imputation | fold 3
+Finished diabetes | mean_imputation | fold 4
+Finished diabetes | mean_imputation | fold 5
+Finished diabetes | pca_median | fold 1
+Finished diabetes | pca_median | fold 2
+Finished diabetes | pca_median | fold 3
+Finished diabetes | pca_median | fold 4
+Finished diabetes | pca_median | fold 5
+Finished diabetes | svd_median | fold 1
+Finished diabetes | svd_median | fold 2
+Finished diabetes | svd_median | fold 3
+Finished diabetes | svd_median | fold 4
+Finished diabetes | svd_median | fold 5
+Finished breast_cancer | baseline_median | fold 1
+Finished breast_cancer | baseline_median | fold 2
+Finished breast_cancer | baseline_median | fold 3
+Finished breast_cancer | baseline_median | fold 4
+Finished breast_cancer | baseline_median | fold 5
+Finished breast_cancer | mean_imputation | fold 1
+Finished breast_cancer | mean_imputation | fold 2
+Finished breast_cancer | mean_imputation | fold 3
+Finished breast_cancer | mean_imputation | fold 4
+Finished breast_cancer | mean_imputation | fold 5
+Finished breast_cancer | pca_median | fold 1
+Finished breast_cancer | pca_median | fold 2
+Finished breast_cancer | pca_median | fold 3
+Finished breast_cancer | pca_median | fold 4
+Finished breast_cancer | pca_median | fold 5
+Finished breast_cancer | svd_median | fold 1
+Finished breast_cancer | svd_median | fold 2
+Finished breast_cancer | svd_median | fold 3
+Finished breast_cancer | svd_median | fold 4
+Finished breast_cancer | svd_median | fold 5
+Finished heart_disease | baseline_median | fold 1
+Finished heart_disease | baseline_median | fold 2
+Finished heart_disease | baseline_median | fold 3
+Finished heart_disease | baseline_median | fold 4
+Finished heart_disease | baseline_median | fold 5
+Finished heart_disease | mean_imputation | fold 1
+Finished heart_disease | mean_imputation | fold 2
+Finished heart_disease | mean_imputation | fold 3
+Finished heart_disease | mean_imputation | fold 4
+Finished heart_disease | mean_imputation | fold 5
+Finished heart_disease | pca_median | fold 1
+Finished heart_disease | pca_median | fold 2
+Finished heart_disease | pca_median | fold 3
+Finished heart_disease | pca_median | fold 4
+Finished heart_disease | pca_median | fold 5
+Finished heart_disease | svd_median | fold 1
+Finished heart_disease | svd_median | fold 2
+Finished heart_disease | svd_median | fold 3
+Finished heart_disease | svd_median | fold 4
+Finished heart_disease | svd_median | fold 5
+
+Saved: /mnt/data/pso_review/uncertainty-aware-pso-svm/results/additional_analysis/lambda_sensitivity_outer_folds.csv
+Saved: /mnt/data/pso_review/uncertainty-aware-pso-svm/results/additional_analysis/lambda_sensitivity_summary.csv
+Saved: /mnt/data/pso_review/uncertainty-aware-pso-svm/results/additional_analysis/lambda_sensitivity_paired_deltas.csv
+Saved: lambda1_reproduction_check.csv
+Max absolute difference for lambda=1 reproduction: 1.734723475976807e-16

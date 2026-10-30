@@ -1,0 +1,84 @@
+{
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "lambda_values": [
+    0.0,
+    0.25,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "outer_folds": 5,
+  "inner_folds": 5,
+  "particles": 8,
+  "iterations": 6,
+  "evaluations_per_search": 48,
+  "log10_C_bounds": [
+    -3.0,
+    3.0
+  ],
+  "log10_gamma_bounds": [
+    -3.0,
+    3.0
+  ],
+  "datasets": [
+    "diabetes",
+    "breast_cancer",
+    "heart_disease"
+  ],
+  "preprocessing_configs": [
+    {
+      "name": "baseline_median",
+      "numeric_imputation": "median",
+      "dimensionality_reduction": null
+    },
+    {
+      "name": "mean_imputation",
+      "numeric_imputation": "mean",
+      "dimensionality_reduction": null
+    },
+    {
+      "name": "pca_median",
+      "numeric_imputation": "median",
+      "dimensionality_reduction": "pca"
+    },
+    {
+      "name": "svd_median",
+      "numeric_imputation": "median",
+      "dimensionality_reduction": "svd"
+    }
+  ],
+  "pca_variance": 0.95,
+  "svd_components": 5,
+  "svd_random_state_policy": "equal to the seed recorded for each run",
+  "outer_seed_rule": "run seed",
+  "inner_seed_rule": "run seed + 1-based outer_fold",
+  "pso_seed_rule": "run seed + 1-based outer_fold; restarted identically for each lambda",
+  "lambda_zero_definition": "same PSO implementation with mean-loss fitness and best updates",
+  "paired_initialization": "verified across all lambda searches per matched outer fold",
+  "statistical_inference": "descriptive only; no significance tests",
+  "seed": 42,
+  "outer_random_state": 42,
+  "inner_random_states": {
+    "1": 43,
+    "2": 44,
+    "3": 45,
+    "4": 46,
+    "5": 47
+  },
+  "pso_random_states": {
+    "1": 43,
+    "2": 44,
+    "3": 45,
+    "4": 46,
+    "5": 47
+  },
+  "svd_random_state": 42,
+  "source_v2_runner": "C:\\Users\\saira\\Downloads\\pso_final_extracted\\uncertainty-aware-pso-svm\\experiments\\uncertainty_aware_pso_v2\\run_experiment.py",
+  "output_directory": "C:\\Users\\saira\\Downloads\\pso_final_extracted\\uncertainty-aware-pso-svm\\experiments\\uncertainty_aware_pso_lambda_multiseed\\seed_42",
+  "validation_status": "passed",
+  "elapsed_runtime_seconds": 1680.9377799000358
+}

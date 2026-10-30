@@ -1,0 +1,20 @@
+﻿# Raw datasets - do not upload to GitHub
+data/raw/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pkl
+*.joblib
+
+# Virtual environments
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE settings
+.vscode/
+
+# Generated experiment outputs

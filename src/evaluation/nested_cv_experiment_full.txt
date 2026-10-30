@@ -1,0 +1,620 @@
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+from sklearn.model_selection import StratifiedKFold, cross_val_score
+from sklearn.pipeline import Pipeline
+from sklearn.svm import SVC
+from sklearn.metrics import (
+    roc_auc_score,
+    balanced_accuracy_score,
+    confusion_matrix,
+    f1_score,
+)
+
+from src.data_loader import get_dataset
+from src.preprocessing import build_preprocessor
+
+
+# ============================================================
+# 1. EXPERIMENT SETTINGS
+# ============================================================
+
+RANDOM_STATE = 42
+
+OUTER_FOLDS = 5
+INNER_FOLDS = 5
+
+N_PARTICLES = 6
+N_ITERATIONS = 4
+
+LOWER_BOUND = -3.0
+UPPER_BOUND = 3.0
+
+# Fixed for this experiment.
+LAMBDA_VALUE = 1.0
+
+# PCA and SVD parameters
+SVD_COMPONENTS = 5
+PCA_VARIANCE = 0.95
+
+# Each configuration is run independently.
+# Both Standard and UA use the same configuration and folds.
+PREPROCESSING_CONFIGS = [
+    {
+        "name": "baseline_median",
+        "numeric_imputation": "median",
+        "dimensionality_reduction": None,
+    },
+    {
+        "name": "mean_imputation",
+        "numeric_imputation": "mean",
+        "dimensionality_reduction": None,
+    },
+    {
+        "name": "pca_median",
+        "numeric_imputation": "median",
+        "dimensionality_reduction": "pca",
+    },
+    {
+        "name": "svd_median",
+        "numeric_imputation": "median",
+        "dimensionality_reduction": "svd",
+    },
+]
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+RESULTS_DIR = PROJECT_ROOT / "results"
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+
+
+# ============================================================
+# 2. CREATE AN SVM MODEL
+# ============================================================
+
+def create_model(
+    C,
+    gamma,
+    numeric_features,
+    categorical_features,
+    numeric_imputation="median",
+    dimensionality_reduction=None,
+):
+    """
+    Create a complete preprocessing + RBF-SVM pipeline.
+
+    The preprocessor is fitted only on the training portion of
+    each inner or outer fold, preventing preprocessing leakage.
+    """
+
+    preprocessor = build_preprocessor(
+        numeric_features=numeric_features,
+        categorical_features=categorical_features,
+        numeric_imputation=numeric_imputation,
+        dimensionality_reduction=dimensionality_reduction,
+        pca_variance=PCA_VARIANCE,
+        svd_components=SVD_COMPONENTS,
+    )
+
+    return Pipeline(
+        steps=[
+            ("preprocessing", preprocessor),
+            (
+                "svm",
+                SVC(
+                    kernel="rbf",
+                    C=float(C),
+                    gamma=float(gamma),
+                ),
+            ),
+        ]
+    )
+
+
+# ============================================================
+# 3. EVALUATE ONE SVM CONFIGURATION
+# ============================================================
+
+def evaluate_particle(
+    position,
+    X_train,
+    y_train,
+    numeric_features,
+    categorical_features,
+    inner_splits,
+    numeric_imputation,
+    dimensionality_reduction,
+):
+    """
+    A particle represents a possible pair of C and gamma.
+    Evaluate it using inner CV and return each fold's ROC-AUC loss.
+    """
+
+    log_C, log_gamma = position
+    C = 10 ** log_C
+    gamma = 10 ** log_gamma
+
+    model = create_model(
+        C=C,
+        gamma=gamma,
+        numeric_features=numeric_features,
+        categorical_features=categorical_features,
+        numeric_imputation=numeric_imputation,
+        dimensionality_reduction=dimensionality_reduction,
+    )
+
+    auc_scores = cross_val_score(
+        model,
+        X_train,
+        y_train,
+        cv=inner_splits,
+        scoring="roc_auc",
+        n_jobs=1,
+        error_score="raise",
+    )
+
+    fold_losses = 1.0 - auc_scores
+    return C, gamma, fold_losses
+
+
+# ============================================================
+# 4. RUN PSO USING ONLY OUTER TRAINING DATA
+# ============================================================
+
+def run_inner_pso(
+    X_train,
+    y_train,
+    numeric_features,
+    categorical_features,
+    outer_fold,
+    numeric_imputation,
+    dimensionality_reduction,
+):
+    """
+    Search for SVM C and gamma using inner CV only.
+    PSO's movement objective remains mean inner loss.
+    """
+
+    rng = np.random.default_rng(RANDOM_STATE + outer_fold)
+
+    positions = rng.uniform(
+        LOWER_BOUND,
+        UPPER_BOUND,
+        size=(N_PARTICLES, 2),
+    )
+
+    velocities = rng.uniform(
+        -1.0,
+        1.0,
+        size=(N_PARTICLES, 2),
+    )
+
+    inner_cv = StratifiedKFold(
+        n_splits=INNER_FOLDS,
+        shuffle=True,
+        random_state=RANDOM_STATE + outer_fold,
+    )
+    inner_splits = list(inner_cv.split(X_train, y_train))
+
+    personal_best_positions = positions.copy()
+    personal_best_losses = np.full(N_PARTICLES, np.inf)
+
+    global_best_position = None
+    global_best_loss = np.inf
+
+    history = []
+    inertia = 0.7
+    cognitive = 1.5
+    social = 1.5
+    evaluation_number = 0
+
+    for iteration in range(N_ITERATIONS):
+        print(
+            f"\nOuter fold {outer_fold}/{OUTER_FOLDS} "
+            f"- PSO iteration {iteration + 1}/{N_ITERATIONS}"
+        )
+
+        for particle in range(N_PARTICLES):
+            position = positions[particle].copy()
+
+            C, gamma, fold_losses = evaluate_particle(
+                position=position,
+                X_train=X_train,
+                y_train=y_train,
+                numeric_features=numeric_features,
+                categorical_features=categorical_features,
+                inner_splits=inner_splits,
+                numeric_imputation=numeric_imputation,
+                dimensionality_reduction=dimensionality_reduction,
+            )
+
+            mean_loss = float(np.mean(fold_losses))
+            std_loss = float(np.std(fold_losses, ddof=1))
+            evaluation_number += 1
+
+            history.append(
+                {
+                    "outer_fold": outer_fold,
+                    "iteration": iteration + 1,
+                    "particle": particle,
+                    "evaluation": evaluation_number,
+                    "C": C,
+                    "gamma": gamma,
+                    "mean_inner_loss": mean_loss,
+                    "std_inner_loss": std_loss,
+                    "fold_losses": fold_losses.tolist(),
+                }
+            )
+
+            print(
+                f"  Particle {particle}: C={C:.6g}, "
+                f"gamma={gamma:.6g}, mean loss={mean_loss:.4f}"
+            )
+
+            # PSO movement continues to optimize mean inner loss.
+            if mean_loss < personal_best_losses[particle]:
+                personal_best_losses[particle] = mean_loss
+                personal_best_positions[particle] = position.copy()
+
+            if mean_loss < global_best_loss:
+                global_best_loss = mean_loss
+                global_best_position = position.copy()
+
+        for particle in range(N_PARTICLES):
+            r1 = rng.random(2)
+            r2 = rng.random(2)
+
+            velocities[particle] = (
+                inertia * velocities[particle]
+                + cognitive
+                * r1
+                * (
+                    personal_best_positions[particle]
+                    - positions[particle]
+                )
+                + social
+                * r2
+                * (global_best_position - positions[particle])
+            )
+
+            positions[particle] += velocities[particle]
+            positions[particle] = np.clip(
+                positions[particle],
+                LOWER_BOUND,
+                UPPER_BOUND,
+            )
+
+    # Deduplicate repeated C/gamma pairs, preserving first occurrence.
+    unique_candidates = {}
+    for item in history:
+        key = (round(item["C"], 10), round(item["gamma"], 10))
+        if key not in unique_candidates:
+            unique_candidates[key] = item
+
+    candidates = list(unique_candidates.values())
+    return candidates, history, len(history)
+
+
+# ============================================================
+# 5. SELECT ONE CANDIDATE USING EACH METHOD
+# ============================================================
+
+def select_candidates(candidates):
+    """
+    Standard: minimize mean inner loss.
+    UA: minimize mean inner loss + lambda * inner-fold SD.
+    """
+
+    if not candidates:
+        raise ValueError("PSO did not produce any candidates.")
+
+    standard_candidate = min(
+        candidates,
+        key=lambda item: item["mean_inner_loss"],
+    )
+
+    uncertainty_candidate = min(
+        candidates,
+        key=lambda item: (
+            item["mean_inner_loss"]
+            + LAMBDA_VALUE * item["std_inner_loss"]
+        ),
+    )
+
+    return {
+        "Standard": standard_candidate,
+        "Uncertainty-aware": uncertainty_candidate,
+    }
+
+
+# ============================================================
+# 6. EVALUATE SELECTED MODEL ON THE OUTER TEST FOLD
+# ============================================================
+
+def evaluate_outer_test(
+    candidate,
+    X_train,
+    y_train,
+    X_test,
+    y_test,
+    numeric_features,
+    categorical_features,
+    method_name,
+    numeric_imputation,
+    dimensionality_reduction,
+):
+    """Fit the selected candidate on outer training data and test it."""
+
+    C = candidate["C"]
+    gamma = candidate["gamma"]
+
+    model = create_model(
+        C=C,
+        gamma=gamma,
+        numeric_features=numeric_features,
+        categorical_features=categorical_features,
+        numeric_imputation=numeric_imputation,
+        dimensionality_reduction=dimensionality_reduction,
+    )
+
+    model.fit(X_train, y_train)
+
+    predictions = model.predict(X_test)
+    decision_scores = model.decision_function(X_test)
+
+    # Diagnostics for checking degenerate single-class predictions.
+    predicted_negative_count = int((predictions == 0).sum())
+    predicted_positive_count = int((predictions == 1).sum())
+    decision_score_min = float(decision_scores.min())
+    decision_score_max = float(decision_scores.max())
+
+    outer_auc = roc_auc_score(y_test, decision_scores)
+    balanced_acc = balanced_accuracy_score(y_test, predictions)
+
+    tn, fp, fn, tp = confusion_matrix(
+        y_test,
+        predictions,
+        labels=[0, 1],
+    ).ravel()
+
+    sensitivity = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+    specificity = tn / (tn + fp) if (tn + fp) > 0 else 0.0
+    f1 = f1_score(y_test, predictions, zero_division=0)
+    outer_loss = 1.0 - outer_auc
+
+    if method_name == "Standard":
+        selection_score = candidate["mean_inner_loss"]
+    else:
+        selection_score = (
+            candidate["mean_inner_loss"]
+            + LAMBDA_VALUE * candidate["std_inner_loss"]
+        )
+
+    return {
+        "method": method_name,
+        "C": C,
+        "gamma": gamma,
+        "inner_mean_loss": candidate["mean_inner_loss"],
+        "inner_std_loss": candidate["std_inner_loss"],
+        "selection_score": selection_score,
+        "outer_roc_auc": outer_auc,
+        "outer_loss": outer_loss,
+        "overtuning_gap": outer_loss - candidate["mean_inner_loss"],
+        "balanced_accuracy": balanced_acc,
+        "sensitivity": sensitivity,
+        "specificity": specificity,
+        "f1_score": f1,
+        "predicted_negative_count": predicted_negative_count,
+        "predicted_positive_count": predicted_positive_count,
+        "decision_score_min": decision_score_min,
+        "decision_score_max": decision_score_max,
+    }
+
+
+# ============================================================
+# 7. RUN ONE COMPLETE NESTED-CV EXPERIMENT
+# ============================================================
+
+def run_experiment(dataset_name, config):
+    """Run nested CV for one preprocessing configuration."""
+
+    config_name = config["name"]
+    numeric_imputation = config["numeric_imputation"]
+    dimensionality_reduction = config["dimensionality_reduction"]
+
+    print("\n" + "#" * 72)
+    print(f"CONFIGURATION: {config_name}")
+    print(f"Imputation: {numeric_imputation}")
+    print(f"Dimensionality reduction: {dimensionality_reduction}")
+    print("#" * 72)
+
+    X, y, categorical_features = get_dataset(dataset_name)
+    numeric_features = [
+        column for column in X.columns
+        if column not in categorical_features
+    ]
+
+    outer_cv = StratifiedKFold(
+        n_splits=OUTER_FOLDS,
+        shuffle=True,
+        random_state=RANDOM_STATE,
+    )
+
+    all_outer_results = []
+    all_search_history = []
+
+    for outer_fold, (train_indices, test_indices) in enumerate(
+        outer_cv.split(X, y),
+        start=1,
+    ):
+        print("\n" + "=" * 60)
+        print(f"CONFIGURATION {config_name} — OUTER FOLD {outer_fold}/{OUTER_FOLDS}")
+        print("=" * 60)
+
+        X_train = X.iloc[train_indices]
+        X_test = X.iloc[test_indices]
+        y_train = y.iloc[train_indices]
+        y_test = y.iloc[test_indices]
+
+        candidates, history, evaluation_count = run_inner_pso(
+            X_train=X_train,
+            y_train=y_train,
+            numeric_features=numeric_features,
+            categorical_features=categorical_features,
+            outer_fold=outer_fold,
+            numeric_imputation=numeric_imputation,
+            dimensionality_reduction=dimensionality_reduction,
+        )
+
+        for row in history:
+            row["dataset"] = dataset_name
+            row["preprocessing_config"] = config_name
+        all_search_history.extend(history)
+
+        selected_candidates = select_candidates(candidates)
+
+        for method_name, candidate in selected_candidates.items():
+            print(f"\nMethod: {method_name}")
+            print(f"C: {candidate['C']:.6g}")
+            print(f"gamma: {candidate['gamma']:.6g}")
+            print(f"Mean inner loss: {candidate['mean_inner_loss']:.4f}")
+            print(f"Inner loss SD: {candidate['std_inner_loss']:.4f}")
+
+            metrics = evaluate_outer_test(
+                candidate=candidate,
+                X_train=X_train,
+                y_train=y_train,
+                X_test=X_test,
+                y_test=y_test,
+                numeric_features=numeric_features,
+                categorical_features=categorical_features,
+                method_name=method_name,
+                numeric_imputation=numeric_imputation,
+                dimensionality_reduction=dimensionality_reduction,
+            )
+
+            result = {
+                "dataset": dataset_name,
+                "preprocessing_config": config_name,
+                "numeric_imputation": numeric_imputation,
+                "dimensionality_reduction": (
+                    dimensionality_reduction or "none"
+                ),
+                "outer_fold": outer_fold,
+                "lambda": (
+                    LAMBDA_VALUE
+                    if method_name == "Uncertainty-aware"
+                    else 0.0
+                ),
+                "unique_candidates": len(candidates),
+                "particle_evaluations": evaluation_count,
+                **metrics,
+            }
+            all_outer_results.append(result)
+
+            print(f"Outer ROC-AUC: {metrics['outer_roc_auc']:.4f}")
+            print(f"Balanced accuracy: {metrics['balanced_accuracy']:.4f}")
+            print(f"Sensitivity: {metrics['sensitivity']:.4f}")
+            print(f"Specificity: {metrics['specificity']:.4f}")
+            print(f"F1-score: {metrics['f1_score']:.4f}")
+
+    results_df = pd.DataFrame(all_outer_results)
+    history_df = pd.DataFrame(all_search_history)
+
+    # Unique output names prevent overwriting the original baseline files.
+    results_path = RESULTS_DIR / (
+        f"nested_cv_{dataset_name}_{config_name}_outer_results.csv"
+    )
+    history_path = RESULTS_DIR / (
+        f"nested_cv_{dataset_name}_{config_name}_search_history.csv"
+    )
+
+    results_df.to_csv(results_path, index=False)
+    history_df.to_csv(history_path, index=False)
+
+    print("\n" + "-" * 60)
+    print(f"Completed configuration: {config_name}")
+    print("\nMean outer-fold metrics:")
+    metric_columns = [
+        "outer_roc_auc",
+        "balanced_accuracy",
+        "sensitivity",
+        "specificity",
+        "f1_score",
+        "overtuning_gap",
+    ]
+    print(
+        results_df.groupby("method")[metric_columns]
+        .mean()
+        .round(4)
+        .to_string()
+    )
+    print(f"\nOuter results saved to: {results_path}")
+    print(f"Search history saved to: {history_path}")
+
+    return results_df, history_df
+
+
+# ============================================================
+# 8. MAIN EXPERIMENT
+# ============================================================
+
+def main():
+    dataset_name = "diabetes"
+
+    print("=" * 72)
+    print("NESTED CROSS-VALIDATION: PREPROCESSING COMPARISON")
+    print("=" * 72)
+    print(f"Dataset: {dataset_name}")
+    print(f"Outer folds: {OUTER_FOLDS}")
+    print(f"Inner folds: {INNER_FOLDS}")
+    print(f"Particles: {N_PARTICLES}")
+    print(f"Iterations: {N_ITERATIONS}")
+    print(f"Lambda: {LAMBDA_VALUE}")
+    print(f"Configurations: {len(PREPROCESSING_CONFIGS)}")
+
+    all_results = []
+
+    for config in PREPROCESSING_CONFIGS:
+        results_df, _ = run_experiment(dataset_name, config)
+        all_results.append(results_df)
+
+    combined_results = pd.concat(all_results, ignore_index=True)
+    combined_path = RESULTS_DIR / (
+        f"nested_cv_{dataset_name}_preprocessing_comparison.csv"
+    )
+    combined_results.to_csv(combined_path, index=False)
+
+    metric_columns = [
+        "outer_roc_auc",
+        "balanced_accuracy",
+        "sensitivity",
+        "specificity",
+        "f1_score",
+        "overtuning_gap",
+    ]
+
+    summary = (
+        combined_results
+        .groupby(["preprocessing_config", "method"])[metric_columns]
+        .mean()
+        .round(4)
+    )
+
+    summary_path = RESULTS_DIR / (
+        f"nested_cv_{dataset_name}_preprocessing_summary.csv"
+    )
+    summary.to_csv(summary_path)
+
+    print("\n" + "=" * 72)
+    print("ALL PREPROCESSING EXPERIMENTS COMPLETE")
+    print("=" * 72)
+    print("\nMean metrics across outer folds:")
+    print(summary.to_string())
+    print(f"\nCombined results saved to: {combined_path}")
+    print(f"Summary saved to: {summary_path}")
+
+
+if __name__ == "__main__":
+    main()

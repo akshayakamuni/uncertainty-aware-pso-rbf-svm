@@ -1,0 +1,48 @@
+{
+  "seed": 42,
+  "outer_folds": 5,
+  "inner_folds": 5,
+  "particles": 8,
+  "iterations": 6,
+  "evaluations_per_search": 48,
+  "log10_C_bounds": [
+    -3.0,
+    3.0
+  ],
+  "log10_gamma_bounds": [
+    -3.0,
+    3.0
+  ],
+  "primary_lambda": 1.0,
+  "pso_objective": "mean inner-fold (1 - ROC-AUC)",
+  "selection_std": "sample standard deviation (ddof=1)",
+  "datasets": [
+    "diabetes",
+    "breast_cancer",
+    "heart_disease"
+  ],
+  "preprocessing_configs": [
+    {
+      "name": "baseline_median",
+      "numeric_imputation": "median",
+      "dimensionality_reduction": null
+    },
+    {
+      "name": "mean_imputation",
+      "numeric_imputation": "mean",
+      "dimensionality_reduction": null
+    },
+    {
+      "name": "pca_median",
+      "numeric_imputation": "median",
+      "dimensionality_reduction": "pca"
+    },
+    {
+      "name": "svd_median",
+      "numeric_imputation": "median",
+      "dimensionality_reduction": "svd"
+    }
+  ],
+  "output_directory": "C:\\Users\\saira\\Downloads\\pso_final_extracted\\uncertainty-aware-pso-svm\\experiments\\expanded_search_v1",
+  "baseline_input_read_only": "C:\\Users\\saira\\Downloads\\pso_final_extracted\\uncertainty-aware-pso-svm\\results\\nested_cv_all_datasets_preprocessing_comparison.csv"
+}

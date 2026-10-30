@@ -1,0 +1,9 @@
+,data_type
+pregnancies,int64
+glucose,float64
+blood_pressure,float64
+skin_thickness,float64
+insulin,float64
+bmi,float64
+diabetes_pedigree,float64
+age,int64

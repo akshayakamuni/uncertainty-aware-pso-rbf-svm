@@ -1,0 +1,9 @@
+preprocessing_config,method,outer_roc_auc,balanced_accuracy,sensitivity,specificity,f1_score,overtuning_gap
+baseline_median,Standard,0.8299,0.731,0.776,0.686,0.6561,0.008
+baseline_median,Uncertainty-aware,0.8416,0.741,0.802,0.68,0.669,-0.0074
+mean_imputation,Standard,0.8341,0.7425,0.7611,0.724,0.6685,0.0046
+mean_imputation,Uncertainty-aware,0.8396,0.7436,0.8131,0.674,0.6727,-0.005
+pca_median,Standard,0.8409,0.7457,0.7834,0.708,0.6724,-0.0046
+pca_median,Uncertainty-aware,0.8429,0.7478,0.8056,0.69,0.6756,-0.0082
+svd_median,Standard,0.8175,0.7226,0.8312,0.614,0.6473,-0.0023
+svd_median,Uncertainty-aware,0.8162,0.7058,0.7755,0.636,0.6281,-0.0025

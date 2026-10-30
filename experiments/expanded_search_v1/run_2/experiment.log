@@ -1,0 +1,74 @@
+2026-10-27 22:46:13,607 INFO Experiment started; all generated outputs are directed to C:\Users\saira\Downloads\pso_final_extracted\uncertainty-aware-pso-svm\experiments\expanded_search_v1\run_2
+2026-10-27 22:46:13,616 INFO Starting configuration 1/12: diabetes / baseline_median
+2026-10-27 22:46:22,763 INFO Completed diabetes / baseline_median / fold 1 in 9.08s (48 evaluations)
+2026-10-27 22:46:35,572 INFO Completed diabetes / baseline_median / fold 2 in 12.81s (48 evaluations)
+2026-10-27 22:46:44,200 INFO Completed diabetes / baseline_median / fold 3 in 8.63s (48 evaluations)
+2026-10-27 22:46:53,401 INFO Completed diabetes / baseline_median / fold 4 in 9.20s (48 evaluations)
+2026-10-27 22:47:02,050 INFO Completed diabetes / baseline_median / fold 5 in 8.65s (48 evaluations)
+2026-10-27 22:47:02,077 INFO Starting configuration 2/12: diabetes / mean_imputation
+2026-10-27 22:47:08,985 INFO Completed diabetes / mean_imputation / fold 1 in 6.90s (48 evaluations)
+2026-10-27 22:47:15,481 INFO Completed diabetes / mean_imputation / fold 2 in 6.50s (48 evaluations)
+2026-10-27 22:47:22,205 INFO Completed diabetes / mean_imputation / fold 3 in 6.72s (48 evaluations)
+2026-10-27 22:47:28,776 INFO Completed diabetes / mean_imputation / fold 4 in 6.57s (48 evaluations)
+2026-10-27 22:47:35,815 INFO Completed diabetes / mean_imputation / fold 5 in 7.04s (48 evaluations)
+2026-10-27 22:47:35,842 INFO Starting configuration 3/12: diabetes / pca_median
+2026-10-27 22:47:42,416 INFO Completed diabetes / pca_median / fold 1 in 6.57s (48 evaluations)
+2026-10-27 22:47:49,913 INFO Completed diabetes / pca_median / fold 2 in 7.50s (48 evaluations)
+2026-10-27 22:47:57,599 INFO Completed diabetes / pca_median / fold 3 in 7.69s (48 evaluations)
+2026-10-27 22:48:04,876 INFO Completed diabetes / pca_median / fold 4 in 7.28s (48 evaluations)
+2026-10-27 22:48:12,180 INFO Completed diabetes / pca_median / fold 5 in 7.30s (48 evaluations)
+2026-10-27 22:48:12,216 INFO Starting configuration 4/12: diabetes / svd_median
+2026-10-27 22:48:19,568 INFO Completed diabetes / svd_median / fold 1 in 7.34s (48 evaluations)
+2026-10-27 22:48:26,738 INFO Completed diabetes / svd_median / fold 2 in 7.17s (48 evaluations)
+2026-10-27 22:48:34,336 INFO Completed diabetes / svd_median / fold 3 in 7.60s (48 evaluations)
+2026-10-27 22:48:41,948 INFO Completed diabetes / svd_median / fold 4 in 7.61s (48 evaluations)
+2026-10-27 22:48:48,662 INFO Completed diabetes / svd_median / fold 5 in 6.71s (48 evaluations)
+2026-10-27 22:48:48,691 INFO Starting configuration 5/12: breast_cancer / baseline_median
+2026-10-27 22:48:53,732 INFO Completed breast_cancer / baseline_median / fold 1 in 5.03s (48 evaluations)
+2026-10-27 22:48:59,135 INFO Completed breast_cancer / baseline_median / fold 2 in 5.40s (48 evaluations)
+2026-10-27 22:49:04,859 INFO Completed breast_cancer / baseline_median / fold 3 in 5.72s (48 evaluations)
+2026-10-27 22:49:10,622 INFO Completed breast_cancer / baseline_median / fold 4 in 5.76s (48 evaluations)
+2026-10-27 22:49:15,998 INFO Completed breast_cancer / baseline_median / fold 5 in 5.37s (48 evaluations)
+2026-10-27 22:49:16,031 INFO Starting configuration 6/12: breast_cancer / mean_imputation
+2026-10-27 22:49:21,094 INFO Completed breast_cancer / mean_imputation / fold 1 in 5.05s (48 evaluations)
+2026-10-27 22:49:25,982 INFO Completed breast_cancer / mean_imputation / fold 2 in 4.89s (48 evaluations)
+2026-10-27 22:49:31,772 INFO Completed breast_cancer / mean_imputation / fold 3 in 5.79s (48 evaluations)
+2026-10-27 22:49:37,313 INFO Completed breast_cancer / mean_imputation / fold 4 in 5.54s (48 evaluations)
+2026-10-27 22:49:42,327 INFO Completed breast_cancer / mean_imputation / fold 5 in 5.01s (48 evaluations)
+2026-10-27 22:49:42,372 INFO Starting configuration 7/12: breast_cancer / pca_median
+2026-10-27 22:49:47,237 INFO Completed breast_cancer / pca_median / fold 1 in 4.86s (48 evaluations)
+2026-10-27 22:49:52,104 INFO Completed breast_cancer / pca_median / fold 2 in 4.87s (48 evaluations)
+2026-10-27 22:49:57,874 INFO Completed breast_cancer / pca_median / fold 3 in 5.77s (48 evaluations)
+2026-10-27 22:50:03,232 INFO Completed breast_cancer / pca_median / fold 4 in 5.36s (48 evaluations)
+2026-10-27 22:50:08,864 INFO Completed breast_cancer / pca_median / fold 5 in 5.63s (48 evaluations)
+2026-10-27 22:50:08,906 INFO Starting configuration 8/12: breast_cancer / svd_median
+2026-10-27 22:50:13,697 INFO Completed breast_cancer / svd_median / fold 1 in 4.78s (48 evaluations)
+2026-10-27 22:50:18,604 INFO Completed breast_cancer / svd_median / fold 2 in 4.91s (48 evaluations)
+2026-10-27 22:50:23,540 INFO Completed breast_cancer / svd_median / fold 3 in 4.94s (48 evaluations)
+2026-10-27 22:50:28,524 INFO Completed breast_cancer / svd_median / fold 4 in 4.98s (48 evaluations)
+2026-10-27 22:50:33,699 INFO Completed breast_cancer / svd_median / fold 5 in 5.17s (48 evaluations)
+2026-10-27 22:50:33,745 INFO Starting configuration 9/12: heart_disease / baseline_median
+2026-10-27 22:50:41,732 INFO Completed heart_disease / baseline_median / fold 1 in 7.98s (48 evaluations)
+2026-10-27 22:50:48,628 INFO Completed heart_disease / baseline_median / fold 2 in 6.90s (48 evaluations)
+2026-10-27 22:50:55,563 INFO Completed heart_disease / baseline_median / fold 3 in 6.93s (48 evaluations)
+2026-10-27 22:51:02,894 INFO Completed heart_disease / baseline_median / fold 4 in 7.33s (48 evaluations)
+2026-10-27 22:51:10,252 INFO Completed heart_disease / baseline_median / fold 5 in 7.36s (48 evaluations)
+2026-10-27 22:51:10,297 INFO Starting configuration 10/12: heart_disease / mean_imputation
+2026-10-27 22:51:21,726 INFO Completed heart_disease / mean_imputation / fold 1 in 11.42s (48 evaluations)
+2026-10-27 22:51:35,707 INFO Completed heart_disease / mean_imputation / fold 2 in 13.98s (48 evaluations)
+2026-10-27 22:51:50,376 INFO Completed heart_disease / mean_imputation / fold 3 in 14.67s (48 evaluations)
+2026-10-27 22:52:04,357 INFO Completed heart_disease / mean_imputation / fold 4 in 13.98s (48 evaluations)
+2026-10-27 22:52:18,114 INFO Completed heart_disease / mean_imputation / fold 5 in 13.76s (48 evaluations)
+2026-10-27 22:52:18,207 INFO Starting configuration 11/12: heart_disease / pca_median
+2026-10-27 22:52:32,392 INFO Completed heart_disease / pca_median / fold 1 in 14.17s (48 evaluations)
+2026-10-27 22:52:47,945 INFO Completed heart_disease / pca_median / fold 2 in 15.55s (48 evaluations)
+2026-10-27 22:53:00,437 INFO Completed heart_disease / pca_median / fold 3 in 12.49s (48 evaluations)
+2026-10-27 22:53:07,787 INFO Completed heart_disease / pca_median / fold 4 in 7.35s (48 evaluations)
+2026-10-27 22:53:14,520 INFO Completed heart_disease / pca_median / fold 5 in 6.73s (48 evaluations)
+2026-10-27 22:53:14,569 INFO Starting configuration 12/12: heart_disease / svd_median
+2026-10-27 22:53:21,171 INFO Completed heart_disease / svd_median / fold 1 in 6.60s (48 evaluations)
+2026-10-27 22:53:27,692 INFO Completed heart_disease / svd_median / fold 2 in 6.52s (48 evaluations)
+2026-10-27 22:53:35,506 INFO Completed heart_disease / svd_median / fold 3 in 7.81s (48 evaluations)
+2026-10-27 22:53:42,230 INFO Completed heart_disease / svd_median / fold 4 in 6.72s (48 evaluations)
+2026-10-27 22:53:48,871 INFO Completed heart_disease / svd_median / fold 5 in 6.64s (48 evaluations)
+2026-10-27 22:53:49,073 INFO Experiment ended after 455.47s

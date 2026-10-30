@@ -1,0 +1,66 @@
+{
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "methods": [
+    "M1 Standard PSO",
+    "M3 UA-PSO"
+  ],
+  "primary_lambda": 1.0,
+  "outer_folds": 5,
+  "inner_folds": 5,
+  "particles": 8,
+  "iterations": 6,
+  "evaluations_per_search": 48,
+  "log10_C_bounds": [
+    -3.0,
+    3.0
+  ],
+  "log10_gamma_bounds": [
+    -3.0,
+    3.0
+  ],
+  "datasets": [
+    "diabetes",
+    "breast_cancer",
+    "heart_disease"
+  ],
+  "preprocessing_configs": [
+    {
+      "name": "baseline_median",
+      "numeric_imputation": "median",
+      "dimensionality_reduction": null
+    },
+    {
+      "name": "mean_imputation",
+      "numeric_imputation": "mean",
+      "dimensionality_reduction": null
+    },
+    {
+      "name": "pca_median",
+      "numeric_imputation": "median",
+      "dimensionality_reduction": "pca"
+    },
+    {
+      "name": "svd_median",
+      "numeric_imputation": "median",
+      "dimensionality_reduction": "svd"
+    }
+  ],
+  "pca_variance": 0.95,
+  "svd_components": 5,
+  "svd_random_state_policy": "equal to the seed recorded for each run",
+  "paired_initialization": "verified per matched M1/M3 search",
+  "aggregation": "paired by seed, dataset, preprocessing_config, and outer_fold",
+  "statistical_inference": "descriptive only; no significance tests",
+  "seed": 42,
+  "svd_random_state": 42,
+  "inner_seed_rule": "seed + 1-based outer_fold",
+  "pso_seed_rule": "seed + 1-based outer_fold; same fresh RNG per method",
+  "output_directory": "C:\\Users\\saira\\Downloads\\pso_final_extracted\\uncertainty-aware-pso-svm\\experiments\\uncertainty_aware_pso_v2_multiseed\\seed_42",
+  "source_v2_runner": "C:\\Users\\saira\\Downloads\\pso_final_extracted\\uncertainty-aware-pso-svm\\experiments\\uncertainty_aware_pso_v2\\run_experiment.py",
+  "validation_status": "passed",
+  "elapsed_runtime_seconds": 1096.1739742999198
+}

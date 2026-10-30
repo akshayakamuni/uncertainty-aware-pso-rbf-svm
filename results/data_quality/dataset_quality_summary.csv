@@ -1,0 +1,4 @@
+dataset,rows,feature_count,missing_feature_values,duplicate_feature_rows,categorical_features,class_counts
+breast_cancer,569,30,0,0,,"{0: 357, 1: 212}"
+heart_disease,303,13,6,0,"sex, cp, fbs, restecg, exang, slope, ca, thal","{0: 164, 1: 139}"
+diabetes,768,8,652,0,,"{0: 500, 1: 268}"

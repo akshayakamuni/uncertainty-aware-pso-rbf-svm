@@ -1,0 +1,9 @@
+feature,raw_missing,raw_zeros,cleaned_missing,zeros_converted_to_missing
+pregnancies,0,111,0,0
+glucose,0,5,5,5
+blood_pressure,0,35,35,35
+skin_thickness,0,227,227,227
+insulin,0,374,374,374
+bmi,0,11,11,11
+diabetes_pedigree,0,0,0,0
+age,0,0,0,0

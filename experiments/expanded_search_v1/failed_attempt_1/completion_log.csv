@@ -1,0 +1,13 @@
+dataset,preprocessing_config,status,completed_outer_folds,expected_outer_folds,runtime_seconds,error
+diabetes,baseline_median,failed,0,5,0.24151660001371056,NameError: name 'history' is not defined
+diabetes,mean_imputation,failed,0,5,0.16584260005038232,NameError: name 'history' is not defined
+diabetes,pca_median,failed,0,5,0.15621050004847348,NameError: name 'history' is not defined
+diabetes,svd_median,failed,0,5,0.1820272000040859,NameError: name 'history' is not defined
+breast_cancer,baseline_median,failed,0,5,0.12569860008079559,NameError: name 'history' is not defined
+breast_cancer,mean_imputation,failed,0,5,0.1291901000076905,NameError: name 'history' is not defined
+breast_cancer,pca_median,failed,0,5,0.14301620004698634,NameError: name 'history' is not defined
+breast_cancer,svd_median,failed,0,5,0.12145049998071045,NameError: name 'history' is not defined
+heart_disease,baseline_median,failed,0,5,0.20776929997373372,NameError: name 'history' is not defined
+heart_disease,mean_imputation,failed,0,5,0.21109570004045963,NameError: name 'history' is not defined
+heart_disease,pca_median,failed,0,5,0.20096789998933673,NameError: name 'history' is not defined
+heart_disease,svd_median,failed,0,5,0.21340889995917678,NameError: name 'history' is not defined

@@ -1,0 +1,69 @@
+{
+  "seed": 42,
+  "outer_folds": 5,
+  "inner_folds": 5,
+  "particles": 8,
+  "iterations": 6,
+  "evaluations_per_search": 48,
+  "log10_C_bounds": [
+    -3.0,
+    3.0
+  ],
+  "log10_gamma_bounds": [
+    -3.0,
+    3.0
+  ],
+  "primary_lambda": 1.0,
+  "lambda_sensitivity_values": [
+    0.0,
+    0.25,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "fitness_sample_std_ddof": 1,
+  "pso_coefficients": {
+    "inertia": 0.7,
+    "cognitive": 1.5,
+    "social": 1.5
+  },
+  "datasets": [
+    "diabetes",
+    "breast_cancer",
+    "heart_disease"
+  ],
+  "preprocessing_configs": [
+    {
+      "name": "baseline_median",
+      "numeric_imputation": "median",
+      "dimensionality_reduction": null
+    },
+    {
+      "name": "mean_imputation",
+      "numeric_imputation": "mean",
+      "dimensionality_reduction": null
+    },
+    {
+      "name": "pca_median",
+      "numeric_imputation": "median",
+      "dimensionality_reduction": "pca"
+    },
+    {
+      "name": "svd_median",
+      "numeric_imputation": "median",
+      "dimensionality_reduction": "svd"
+    }
+  ],
+  "pca_variance": 0.95,
+  "svd_components": 5,
+  "svd_random_state": null,
+  "method_search_design": {
+    "M1": "PSO mean loss",
+    "M2": "post-hoc selection from identical M1 history",
+    "M3": "separate penalized-fitness PSO trajectory per lambda",
+    "M4": "48 uniformly random points; not PSO",
+    "matched_initial_positions_and_rng": true
+  },
+  "repeatability_study": "not run; one-seed initial experiment",
+  "output_directory": "C:\\Users\\saira\\Downloads\\pso_final_extracted\\uncertainty-aware-pso-svm\\experiments\\uncertainty_aware_pso_v2"
+}

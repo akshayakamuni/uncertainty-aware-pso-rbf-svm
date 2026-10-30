@@ -1,0 +1,301 @@
+seed,dataset,preprocessing_config,outer_fold,lambda,method,candidate_evaluations,search_runtime_seconds
+43,diabetes,baseline_median,1,0.0,M1 Standard PSO,48,4.955510899890214
+43,diabetes,baseline_median,1,0.25,M3 UA-PSO,48,4.726852299994789
+43,diabetes,baseline_median,1,0.5,M3 UA-PSO,48,5.314276300021447
+43,diabetes,baseline_median,1,1.0,M3 UA-PSO,48,4.920166799915023
+43,diabetes,baseline_median,1,2.0,M3 UA-PSO,48,4.794209900079295
+43,diabetes,baseline_median,2,0.0,M1 Standard PSO,48,6.264855999965221
+43,diabetes,baseline_median,2,0.25,M3 UA-PSO,48,5.666675299988128
+43,diabetes,baseline_median,2,0.5,M3 UA-PSO,48,5.648553399951197
+43,diabetes,baseline_median,2,1.0,M3 UA-PSO,48,5.687430099933408
+43,diabetes,baseline_median,2,2.0,M3 UA-PSO,48,5.74869579996448
+43,diabetes,baseline_median,3,0.0,M1 Standard PSO,48,8.552681599976495
+43,diabetes,baseline_median,3,0.25,M3 UA-PSO,48,12.783181100036018
+43,diabetes,baseline_median,3,0.5,M3 UA-PSO,48,10.753311900072731
+43,diabetes,baseline_median,3,1.0,M3 UA-PSO,48,7.092850300017744
+43,diabetes,baseline_median,3,2.0,M3 UA-PSO,48,6.695496000000276
+43,diabetes,baseline_median,4,0.0,M1 Standard PSO,48,5.5815930000972
+43,diabetes,baseline_median,4,0.25,M3 UA-PSO,48,5.527295799925923
+43,diabetes,baseline_median,4,0.5,M3 UA-PSO,48,4.977954900008626
+43,diabetes,baseline_median,4,1.0,M3 UA-PSO,48,4.947746400022879
+43,diabetes,baseline_median,4,2.0,M3 UA-PSO,48,5.024155499995686
+43,diabetes,baseline_median,5,0.0,M1 Standard PSO,48,4.727380100055598
+43,diabetes,baseline_median,5,0.25,M3 UA-PSO,48,5.117342099896632
+43,diabetes,baseline_median,5,0.5,M3 UA-PSO,48,5.0051728000398725
+43,diabetes,baseline_median,5,1.0,M3 UA-PSO,48,4.798877299996093
+43,diabetes,baseline_median,5,2.0,M3 UA-PSO,48,4.822432199958712
+43,diabetes,mean_imputation,1,0.0,M1 Standard PSO,48,5.179342500050552
+43,diabetes,mean_imputation,1,0.25,M3 UA-PSO,48,5.385086300084367
+43,diabetes,mean_imputation,1,0.5,M3 UA-PSO,48,5.4260065000271425
+43,diabetes,mean_imputation,1,1.0,M3 UA-PSO,48,4.7708575000287965
+43,diabetes,mean_imputation,1,2.0,M3 UA-PSO,48,5.263813599944115
+43,diabetes,mean_imputation,2,0.0,M1 Standard PSO,48,5.2473965000826865
+43,diabetes,mean_imputation,2,0.25,M3 UA-PSO,48,5.123363899998367
+43,diabetes,mean_imputation,2,0.5,M3 UA-PSO,48,5.499664400005713
+43,diabetes,mean_imputation,2,1.0,M3 UA-PSO,48,6.045936100068502
+43,diabetes,mean_imputation,2,2.0,M3 UA-PSO,48,5.815679399995133
+43,diabetes,mean_imputation,3,0.0,M1 Standard PSO,48,5.209739399957471
+43,diabetes,mean_imputation,3,0.25,M3 UA-PSO,48,5.348206999944523
+43,diabetes,mean_imputation,3,0.5,M3 UA-PSO,48,5.258780299918726
+43,diabetes,mean_imputation,3,1.0,M3 UA-PSO,48,5.226703500025906
+43,diabetes,mean_imputation,3,2.0,M3 UA-PSO,48,5.893855900038034
+43,diabetes,mean_imputation,4,0.0,M1 Standard PSO,48,5.310255700023845
+43,diabetes,mean_imputation,4,0.25,M3 UA-PSO,48,5.297283099964261
+43,diabetes,mean_imputation,4,0.5,M3 UA-PSO,48,5.084487200016156
+43,diabetes,mean_imputation,4,1.0,M3 UA-PSO,48,4.941431000013836
+43,diabetes,mean_imputation,4,2.0,M3 UA-PSO,48,5.462775300024077
+43,diabetes,mean_imputation,5,0.0,M1 Standard PSO,48,5.636483899899758
+43,diabetes,mean_imputation,5,0.25,M3 UA-PSO,48,5.616091800038703
+43,diabetes,mean_imputation,5,0.5,M3 UA-PSO,48,5.111457400023937
+43,diabetes,mean_imputation,5,1.0,M3 UA-PSO,48,4.896294500096701
+43,diabetes,mean_imputation,5,2.0,M3 UA-PSO,48,4.865584900020622
+43,diabetes,pca_median,1,0.0,M1 Standard PSO,48,5.742172199999914
+43,diabetes,pca_median,1,0.25,M3 UA-PSO,48,5.454193999990821
+43,diabetes,pca_median,1,0.5,M3 UA-PSO,48,5.301949099986814
+43,diabetes,pca_median,1,1.0,M3 UA-PSO,48,5.036491499980912
+43,diabetes,pca_median,1,2.0,M3 UA-PSO,48,5.062295000068843
+43,diabetes,pca_median,2,0.0,M1 Standard PSO,48,6.557895999983884
+43,diabetes,pca_median,2,0.25,M3 UA-PSO,48,7.33675390004646
+43,diabetes,pca_median,2,0.5,M3 UA-PSO,48,9.78715089999605
+43,diabetes,pca_median,2,1.0,M3 UA-PSO,48,8.82524989999365
+43,diabetes,pca_median,2,2.0,M3 UA-PSO,48,6.2471979999681935
+43,diabetes,pca_median,3,0.0,M1 Standard PSO,48,6.070321999955922
+43,diabetes,pca_median,3,0.25,M3 UA-PSO,48,6.177828099927865
+43,diabetes,pca_median,3,0.5,M3 UA-PSO,48,6.2066756000276655
+43,diabetes,pca_median,3,1.0,M3 UA-PSO,48,6.290606800001115
+43,diabetes,pca_median,3,2.0,M3 UA-PSO,48,7.978179199970327
+43,diabetes,pca_median,4,0.0,M1 Standard PSO,48,6.589005600078963
+43,diabetes,pca_median,4,0.25,M3 UA-PSO,48,6.580690100090578
+43,diabetes,pca_median,4,0.5,M3 UA-PSO,48,7.2262996000936255
+43,diabetes,pca_median,4,1.0,M3 UA-PSO,48,6.578638499951921
+43,diabetes,pca_median,4,2.0,M3 UA-PSO,48,6.25456180004403
+43,diabetes,pca_median,5,0.0,M1 Standard PSO,48,6.637102000066079
+43,diabetes,pca_median,5,0.25,M3 UA-PSO,48,7.493972600088455
+43,diabetes,pca_median,5,0.5,M3 UA-PSO,48,6.5623746999772266
+43,diabetes,pca_median,5,1.0,M3 UA-PSO,48,6.031138299964368
+43,diabetes,pca_median,5,2.0,M3 UA-PSO,48,6.284396999981254
+43,diabetes,svd_median,1,0.0,M1 Standard PSO,48,6.791523799998686
+43,diabetes,svd_median,1,0.25,M3 UA-PSO,48,6.1554711000062525
+43,diabetes,svd_median,1,0.5,M3 UA-PSO,48,6.429404299939051
+43,diabetes,svd_median,1,1.0,M3 UA-PSO,48,6.127314700046554
+43,diabetes,svd_median,1,2.0,M3 UA-PSO,48,6.034500899957493
+43,diabetes,svd_median,2,0.0,M1 Standard PSO,48,7.008944700006396
+43,diabetes,svd_median,2,0.25,M3 UA-PSO,48,6.524086200050078
+43,diabetes,svd_median,2,0.5,M3 UA-PSO,48,6.317987499991432
+43,diabetes,svd_median,2,1.0,M3 UA-PSO,48,6.3647873000008985
+43,diabetes,svd_median,2,2.0,M3 UA-PSO,48,8.852531100041233
+43,diabetes,svd_median,3,0.0,M1 Standard PSO,48,6.9509501999709755
+43,diabetes,svd_median,3,0.25,M3 UA-PSO,48,7.395816200063564
+43,diabetes,svd_median,3,0.5,M3 UA-PSO,48,6.781988100032322
+43,diabetes,svd_median,3,1.0,M3 UA-PSO,48,7.020047100028023
+43,diabetes,svd_median,3,2.0,M3 UA-PSO,48,7.338159400038421
+43,diabetes,svd_median,4,0.0,M1 Standard PSO,48,6.194809600012377
+43,diabetes,svd_median,4,0.25,M3 UA-PSO,48,7.285557199968025
+43,diabetes,svd_median,4,0.5,M3 UA-PSO,48,6.170347800012678
+43,diabetes,svd_median,4,1.0,M3 UA-PSO,48,6.633244599914178
+43,diabetes,svd_median,4,2.0,M3 UA-PSO,48,6.4548421000363305
+43,diabetes,svd_median,5,0.0,M1 Standard PSO,48,6.750203100033104
+43,diabetes,svd_median,5,0.25,M3 UA-PSO,48,6.044973799958825
+43,diabetes,svd_median,5,0.5,M3 UA-PSO,48,6.259530399926007
+43,diabetes,svd_median,5,1.0,M3 UA-PSO,48,5.952109700068831
+43,diabetes,svd_median,5,2.0,M3 UA-PSO,48,5.982057900051586
+43,breast_cancer,baseline_median,1,0.0,M1 Standard PSO,48,6.949381700018421
+43,breast_cancer,baseline_median,1,0.25,M3 UA-PSO,48,7.050163600011729
+43,breast_cancer,baseline_median,1,0.5,M3 UA-PSO,48,7.38313069997821
+43,breast_cancer,baseline_median,1,1.0,M3 UA-PSO,48,7.778997199959122
+43,breast_cancer,baseline_median,1,2.0,M3 UA-PSO,48,6.135156900039874
+43,breast_cancer,baseline_median,2,0.0,M1 Standard PSO,48,5.998769100056961
+43,breast_cancer,baseline_median,2,0.25,M3 UA-PSO,48,4.988805399974808
+43,breast_cancer,baseline_median,2,0.5,M3 UA-PSO,48,4.765119399991818
+43,breast_cancer,baseline_median,2,1.0,M3 UA-PSO,48,5.420065099955536
+43,breast_cancer,baseline_median,2,2.0,M3 UA-PSO,48,4.998176499968395
+43,breast_cancer,baseline_median,3,0.0,M1 Standard PSO,48,4.662591299973428
+43,breast_cancer,baseline_median,3,0.25,M3 UA-PSO,48,4.612995699979365
+43,breast_cancer,baseline_median,3,0.5,M3 UA-PSO,48,4.503633199958131
+43,breast_cancer,baseline_median,3,1.0,M3 UA-PSO,48,4.372450799914077
+43,breast_cancer,baseline_median,3,2.0,M3 UA-PSO,48,5.19622080004774
+43,breast_cancer,baseline_median,4,0.0,M1 Standard PSO,48,4.6555540999397635
+43,breast_cancer,baseline_median,4,0.25,M3 UA-PSO,48,4.6281733000651
+43,breast_cancer,baseline_median,4,0.5,M3 UA-PSO,48,4.548890899983235
+43,breast_cancer,baseline_median,4,1.0,M3 UA-PSO,48,4.35336389997974
+43,breast_cancer,baseline_median,4,2.0,M3 UA-PSO,48,4.8357323000673205
+43,breast_cancer,baseline_median,5,0.0,M1 Standard PSO,48,4.510993299889378
+43,breast_cancer,baseline_median,5,0.25,M3 UA-PSO,48,4.45935240003746
+43,breast_cancer,baseline_median,5,0.5,M3 UA-PSO,48,4.415060000028461
+43,breast_cancer,baseline_median,5,1.0,M3 UA-PSO,48,4.524821400060318
+43,breast_cancer,baseline_median,5,2.0,M3 UA-PSO,48,5.650741000077687
+43,breast_cancer,mean_imputation,1,0.0,M1 Standard PSO,48,4.944883599993773
+43,breast_cancer,mean_imputation,1,0.25,M3 UA-PSO,48,4.154471200075932
+43,breast_cancer,mean_imputation,1,0.5,M3 UA-PSO,48,4.806662600021809
+43,breast_cancer,mean_imputation,1,1.0,M3 UA-PSO,48,4.9514157000230625
+43,breast_cancer,mean_imputation,1,2.0,M3 UA-PSO,48,4.206025399966165
+43,breast_cancer,mean_imputation,2,0.0,M1 Standard PSO,48,5.158673500060104
+43,breast_cancer,mean_imputation,2,0.25,M3 UA-PSO,48,5.184257399989292
+43,breast_cancer,mean_imputation,2,0.5,M3 UA-PSO,48,4.610129600041546
+43,breast_cancer,mean_imputation,2,1.0,M3 UA-PSO,48,4.845902200089768
+43,breast_cancer,mean_imputation,2,2.0,M3 UA-PSO,48,4.671133000054397
+43,breast_cancer,mean_imputation,3,0.0,M1 Standard PSO,48,5.451727899955586
+43,breast_cancer,mean_imputation,3,0.25,M3 UA-PSO,48,5.096777099999599
+43,breast_cancer,mean_imputation,3,0.5,M3 UA-PSO,48,4.358801099937409
+43,breast_cancer,mean_imputation,3,1.0,M3 UA-PSO,48,5.014934499980882
+43,breast_cancer,mean_imputation,3,2.0,M3 UA-PSO,48,4.937271500006318
+43,breast_cancer,mean_imputation,4,0.0,M1 Standard PSO,48,4.446188100031577
+43,breast_cancer,mean_imputation,4,0.25,M3 UA-PSO,48,5.764850500039756
+43,breast_cancer,mean_imputation,4,0.5,M3 UA-PSO,48,5.315582699957304
+43,breast_cancer,mean_imputation,4,1.0,M3 UA-PSO,48,4.401032299967483
+43,breast_cancer,mean_imputation,4,2.0,M3 UA-PSO,48,4.410753199947067
+43,breast_cancer,mean_imputation,5,0.0,M1 Standard PSO,48,5.222283800016157
+43,breast_cancer,mean_imputation,5,0.25,M3 UA-PSO,48,4.8255666999612
+43,breast_cancer,mean_imputation,5,0.5,M3 UA-PSO,48,5.94840390002355
+43,breast_cancer,mean_imputation,5,1.0,M3 UA-PSO,48,4.573005800019018
+43,breast_cancer,mean_imputation,5,2.0,M3 UA-PSO,48,4.96351239993237
+43,breast_cancer,pca_median,1,0.0,M1 Standard PSO,48,4.5561928999377415
+43,breast_cancer,pca_median,1,0.25,M3 UA-PSO,48,4.47640530008357
+43,breast_cancer,pca_median,1,0.5,M3 UA-PSO,48,5.428318200050853
+43,breast_cancer,pca_median,1,1.0,M3 UA-PSO,48,4.377512100036256
+43,breast_cancer,pca_median,1,2.0,M3 UA-PSO,48,4.681813999894075
+43,breast_cancer,pca_median,2,0.0,M1 Standard PSO,48,4.721797200036235
+43,breast_cancer,pca_median,2,0.25,M3 UA-PSO,48,4.686024300055578
+43,breast_cancer,pca_median,2,0.5,M3 UA-PSO,48,4.653410999919288
+43,breast_cancer,pca_median,2,1.0,M3 UA-PSO,48,5.261108899954706
+43,breast_cancer,pca_median,2,2.0,M3 UA-PSO,48,4.822836900013499
+43,breast_cancer,pca_median,3,0.0,M1 Standard PSO,48,4.447936599957757
+43,breast_cancer,pca_median,3,0.25,M3 UA-PSO,48,4.6989731000503525
+43,breast_cancer,pca_median,3,0.5,M3 UA-PSO,48,4.372156700002961
+43,breast_cancer,pca_median,3,1.0,M3 UA-PSO,48,4.949286899995059
+43,breast_cancer,pca_median,3,2.0,M3 UA-PSO,48,4.84316339995712
+43,breast_cancer,pca_median,4,0.0,M1 Standard PSO,48,4.537080200039782
+43,breast_cancer,pca_median,4,0.25,M3 UA-PSO,48,4.728308099904098
+43,breast_cancer,pca_median,4,0.5,M3 UA-PSO,48,4.4051963000092655
+43,breast_cancer,pca_median,4,1.0,M3 UA-PSO,48,5.948601800017059
+43,breast_cancer,pca_median,4,2.0,M3 UA-PSO,48,5.438661299995147
+43,breast_cancer,pca_median,5,0.0,M1 Standard PSO,48,4.4319886999437585
+43,breast_cancer,pca_median,5,0.25,M3 UA-PSO,48,5.654295600019395
+43,breast_cancer,pca_median,5,0.5,M3 UA-PSO,48,4.587691399967298
+43,breast_cancer,pca_median,5,1.0,M3 UA-PSO,48,4.5734490000177175
+43,breast_cancer,pca_median,5,2.0,M3 UA-PSO,48,5.205978200072423
+43,breast_cancer,svd_median,1,0.0,M1 Standard PSO,48,4.4658306000055745
+43,breast_cancer,svd_median,1,0.25,M3 UA-PSO,48,4.48795219999738
+43,breast_cancer,svd_median,1,0.5,M3 UA-PSO,48,4.424108000006527
+43,breast_cancer,svd_median,1,1.0,M3 UA-PSO,48,4.763417599955574
+43,breast_cancer,svd_median,1,2.0,M3 UA-PSO,48,4.525390699971467
+43,breast_cancer,svd_median,2,0.0,M1 Standard PSO,48,5.856039999984205
+43,breast_cancer,svd_median,2,0.25,M3 UA-PSO,48,5.372194599942304
+43,breast_cancer,svd_median,2,0.5,M3 UA-PSO,48,4.888253499986604
+43,breast_cancer,svd_median,2,1.0,M3 UA-PSO,48,4.997381099965423
+43,breast_cancer,svd_median,2,2.0,M3 UA-PSO,48,4.974093099939637
+43,breast_cancer,svd_median,3,0.0,M1 Standard PSO,48,4.886185299954377
+43,breast_cancer,svd_median,3,0.25,M3 UA-PSO,48,4.61451899993699
+43,breast_cancer,svd_median,3,0.5,M3 UA-PSO,48,4.40180740004871
+43,breast_cancer,svd_median,3,1.0,M3 UA-PSO,48,5.261780200060457
+43,breast_cancer,svd_median,3,2.0,M3 UA-PSO,48,5.139242599951103
+43,breast_cancer,svd_median,4,0.0,M1 Standard PSO,48,5.1877082999562845
+43,breast_cancer,svd_median,4,0.25,M3 UA-PSO,48,4.58140679995995
+43,breast_cancer,svd_median,4,0.5,M3 UA-PSO,48,5.130420299945399
+43,breast_cancer,svd_median,4,1.0,M3 UA-PSO,48,5.456266999943182
+43,breast_cancer,svd_median,4,2.0,M3 UA-PSO,48,4.6239259000867605
+43,breast_cancer,svd_median,5,0.0,M1 Standard PSO,48,5.417555799940601
+43,breast_cancer,svd_median,5,0.25,M3 UA-PSO,48,4.721271899994463
+43,breast_cancer,svd_median,5,0.5,M3 UA-PSO,48,4.5601322000147775
+43,breast_cancer,svd_median,5,1.0,M3 UA-PSO,48,4.553103700047359
+43,breast_cancer,svd_median,5,2.0,M3 UA-PSO,48,4.648100699996576
+43,heart_disease,baseline_median,1,0.0,M1 Standard PSO,48,7.61540959996637
+43,heart_disease,baseline_median,1,0.25,M3 UA-PSO,48,7.5626081000082195
+43,heart_disease,baseline_median,1,0.5,M3 UA-PSO,48,6.9023689000168815
+43,heart_disease,baseline_median,1,1.0,M3 UA-PSO,48,6.741539899958298
+43,heart_disease,baseline_median,1,2.0,M3 UA-PSO,48,6.366060200030915
+43,heart_disease,baseline_median,2,0.0,M1 Standard PSO,48,7.571126899914816
+43,heart_disease,baseline_median,2,0.25,M3 UA-PSO,48,10.55919330008328
+43,heart_disease,baseline_median,2,0.5,M3 UA-PSO,48,11.241038299980573
+43,heart_disease,baseline_median,2,1.0,M3 UA-PSO,48,10.92114569991827
+43,heart_disease,baseline_median,2,2.0,M3 UA-PSO,48,9.01554449996911
+43,heart_disease,baseline_median,3,0.0,M1 Standard PSO,48,7.377920099999756
+43,heart_disease,baseline_median,3,0.25,M3 UA-PSO,48,7.406911900034174
+43,heart_disease,baseline_median,3,0.5,M3 UA-PSO,48,6.750406999955885
+43,heart_disease,baseline_median,3,1.0,M3 UA-PSO,48,7.018073200015351
+43,heart_disease,baseline_median,3,2.0,M3 UA-PSO,48,8.93095780001022
+43,heart_disease,baseline_median,4,0.0,M1 Standard PSO,48,7.08920509996824
+43,heart_disease,baseline_median,4,0.25,M3 UA-PSO,48,8.207140700076707
+43,heart_disease,baseline_median,4,0.5,M3 UA-PSO,48,6.879659799975343
+43,heart_disease,baseline_median,4,1.0,M3 UA-PSO,48,7.771369199967012
+43,heart_disease,baseline_median,4,2.0,M3 UA-PSO,48,7.215370499994606
+43,heart_disease,baseline_median,5,0.0,M1 Standard PSO,48,7.291533499956131
+43,heart_disease,baseline_median,5,0.25,M3 UA-PSO,48,8.270117700099945
+43,heart_disease,baseline_median,5,0.5,M3 UA-PSO,48,8.004209499922581
+43,heart_disease,baseline_median,5,1.0,M3 UA-PSO,48,7.910385599941947
+43,heart_disease,baseline_median,5,2.0,M3 UA-PSO,48,7.371350900037214
+43,heart_disease,mean_imputation,1,0.0,M1 Standard PSO,48,8.597140500089154
+43,heart_disease,mean_imputation,1,0.25,M3 UA-PSO,48,6.979640500037931
+43,heart_disease,mean_imputation,1,0.5,M3 UA-PSO,48,7.254449000000022
+43,heart_disease,mean_imputation,1,1.0,M3 UA-PSO,48,8.04138419998344
+43,heart_disease,mean_imputation,1,2.0,M3 UA-PSO,48,7.81700689997524
+43,heart_disease,mean_imputation,2,0.0,M1 Standard PSO,48,7.542176599963568
+43,heart_disease,mean_imputation,2,0.25,M3 UA-PSO,48,7.898183200042695
+43,heart_disease,mean_imputation,2,0.5,M3 UA-PSO,48,7.000125600025058
+43,heart_disease,mean_imputation,2,1.0,M3 UA-PSO,48,7.705622599925846
+43,heart_disease,mean_imputation,2,2.0,M3 UA-PSO,48,7.120731299975887
+43,heart_disease,mean_imputation,3,0.0,M1 Standard PSO,48,7.227752199978568
+43,heart_disease,mean_imputation,3,0.25,M3 UA-PSO,48,8.690242900047451
+43,heart_disease,mean_imputation,3,0.5,M3 UA-PSO,48,7.119126399978995
+43,heart_disease,mean_imputation,3,1.0,M3 UA-PSO,48,8.449219900066964
+43,heart_disease,mean_imputation,3,2.0,M3 UA-PSO,48,7.020905300043523
+43,heart_disease,mean_imputation,4,0.0,M1 Standard PSO,48,7.694309500046074
+43,heart_disease,mean_imputation,4,0.25,M3 UA-PSO,48,7.43939189997036
+43,heart_disease,mean_imputation,4,0.5,M3 UA-PSO,48,7.652032700018026
+43,heart_disease,mean_imputation,4,1.0,M3 UA-PSO,48,8.071979700005613
+43,heart_disease,mean_imputation,4,2.0,M3 UA-PSO,48,7.838407800067216
+43,heart_disease,mean_imputation,5,0.0,M1 Standard PSO,48,7.923803700017743
+43,heart_disease,mean_imputation,5,0.25,M3 UA-PSO,48,6.856609099893831
+43,heart_disease,mean_imputation,5,0.5,M3 UA-PSO,48,8.138721699942835
+43,heart_disease,mean_imputation,5,1.0,M3 UA-PSO,48,7.303085800027475
+43,heart_disease,mean_imputation,5,2.0,M3 UA-PSO,48,7.136614399962127
+43,heart_disease,pca_median,1,0.0,M1 Standard PSO,48,7.8359022999648005
+43,heart_disease,pca_median,1,0.25,M3 UA-PSO,48,8.216362199978903
+43,heart_disease,pca_median,1,0.5,M3 UA-PSO,48,6.767020500032231
+43,heart_disease,pca_median,1,1.0,M3 UA-PSO,48,7.791666999924928
+43,heart_disease,pca_median,1,2.0,M3 UA-PSO,48,6.887820799951442
+43,heart_disease,pca_median,2,0.0,M1 Standard PSO,48,8.126497899997048
+43,heart_disease,pca_median,2,0.25,M3 UA-PSO,48,7.124690699973144
+43,heart_disease,pca_median,2,0.5,M3 UA-PSO,48,7.440570599981584
+43,heart_disease,pca_median,2,1.0,M3 UA-PSO,48,8.35791220003739
+43,heart_disease,pca_median,2,2.0,M3 UA-PSO,48,8.259374300017953
+43,heart_disease,pca_median,3,0.0,M1 Standard PSO,48,7.7957193000474945
+43,heart_disease,pca_median,3,0.25,M3 UA-PSO,48,6.780497700092383
+43,heart_disease,pca_median,3,0.5,M3 UA-PSO,48,7.218123200000264
+43,heart_disease,pca_median,3,1.0,M3 UA-PSO,48,6.952794500044547
+43,heart_disease,pca_median,3,2.0,M3 UA-PSO,48,7.045565899927169
+43,heart_disease,pca_median,4,0.0,M1 Standard PSO,48,7.665882900008
+43,heart_disease,pca_median,4,0.25,M3 UA-PSO,48,7.80592610000167
+43,heart_disease,pca_median,4,0.5,M3 UA-PSO,48,7.395313999964856
+43,heart_disease,pca_median,4,1.0,M3 UA-PSO,48,7.965576500049792
+43,heart_disease,pca_median,4,2.0,M3 UA-PSO,48,7.018636900000274
+43,heart_disease,pca_median,5,0.0,M1 Standard PSO,48,7.790575599996373
+43,heart_disease,pca_median,5,0.25,M3 UA-PSO,48,7.220897399936803
+43,heart_disease,pca_median,5,0.5,M3 UA-PSO,48,7.086489500012249
+43,heart_disease,pca_median,5,1.0,M3 UA-PSO,48,7.13464149995707
+43,heart_disease,pca_median,5,2.0,M3 UA-PSO,48,7.968751600012183
+43,heart_disease,svd_median,1,0.0,M1 Standard PSO,48,7.166241600061767
+43,heart_disease,svd_median,1,0.25,M3 UA-PSO,48,7.392965399893001
+43,heart_disease,svd_median,1,0.5,M3 UA-PSO,48,7.388259000028484
+43,heart_disease,svd_median,1,1.0,M3 UA-PSO,48,7.681889900006354
+43,heart_disease,svd_median,1,2.0,M3 UA-PSO,48,8.412947599892505
+43,heart_disease,svd_median,2,0.0,M1 Standard PSO,48,9.514030599966645
+43,heart_disease,svd_median,2,0.25,M3 UA-PSO,48,10.319233100046404
+43,heart_disease,svd_median,2,0.5,M3 UA-PSO,48,10.332953999983147
+43,heart_disease,svd_median,2,1.0,M3 UA-PSO,48,6.752587799914181
+43,heart_disease,svd_median,2,2.0,M3 UA-PSO,48,7.520543899969198
+43,heart_disease,svd_median,3,0.0,M1 Standard PSO,48,6.914736400009133
+43,heart_disease,svd_median,3,0.25,M3 UA-PSO,48,7.149959999951534
+43,heart_disease,svd_median,3,0.5,M3 UA-PSO,48,7.141192500013858
+43,heart_disease,svd_median,3,1.0,M3 UA-PSO,48,7.8103663000511006
+43,heart_disease,svd_median,3,2.0,M3 UA-PSO,48,8.849543899996206
+43,heart_disease,svd_median,4,0.0,M1 Standard PSO,48,7.522901999996975
+43,heart_disease,svd_median,4,0.25,M3 UA-PSO,48,8.350776400067843
+43,heart_disease,svd_median,4,0.5,M3 UA-PSO,48,7.316683300072327
+43,heart_disease,svd_median,4,1.0,M3 UA-PSO,48,6.9999001999385655
+43,heart_disease,svd_median,4,2.0,M3 UA-PSO,48,7.097548699937761
+43,heart_disease,svd_median,5,0.0,M1 Standard PSO,48,8.961302500101738
+43,heart_disease,svd_median,5,0.25,M3 UA-PSO,48,7.769831900019199
+43,heart_disease,svd_median,5,0.5,M3 UA-PSO,48,7.657874200027436
+43,heart_disease,svd_median,5,1.0,M3 UA-PSO,48,7.052943399990909
+43,heart_disease,svd_median,5,2.0,M3 UA-PSO,48,7.650070299976505

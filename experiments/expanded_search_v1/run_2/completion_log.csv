@@ -1,0 +1,13 @@
+dataset,preprocessing_config,status,completed_outer_folds,expected_outer_folds,runtime_seconds,error
+diabetes,baseline_median,completed,5,5,48.442873600055464,
+diabetes,mean_imputation,completed,5,5,33.74318650003988,
+diabetes,pca_median,completed,5,5,36.343634900054894,
+diabetes,svd_median,completed,5,5,36.45022720005363,
+breast_cancer,baseline_median,completed,5,5,27.311418700031936,
+breast_cancer,mean_imputation,completed,5,5,26.299878100049682,
+breast_cancer,pca_median,completed,5,5,26.498508299933746,
+breast_cancer,svd_median,completed,5,5,24.795543900108896,
+heart_disease,baseline_median,completed,5,5,36.510154900024645,
+heart_disease,mean_imputation,completed,5,5,67.82085939997341,
+heart_disease,pca_median,completed,5,5,56.317696399986744,
+heart_disease,svd_median,completed,5,5,34.30510090000462,
