@@ -1,13 +1,9 @@
 """Recompute descriptive summaries and figures from completed lambda runs."""
-
 from __future__ import annotations
-
 import argparse
 import json
 from pathlib import Path
-
 import matplotlib
-
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
