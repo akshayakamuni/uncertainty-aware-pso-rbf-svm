@@ -28,7 +28,7 @@
 - No explicit NA values were found before preprocessing.
 - Zero counts: glucose = 5, blood pressure = 35, skin thickness = 227, insulin = 374, BMI = 11.
 - The loader treats zero in these five measurements as missing; zero pregnancies is retained as valid. This is a modeling assumption based on common handling of this dataset and should be stated as a limitation because not every zero can be proven to mean missing.
-- The schema matches the commonly used Pima Indians Diabetes dataset. Exact provenance of this specific local file copy and its license remain unverified; record the download URL and file checksum before publication. Do not cite the unrelated UCI Diabetes time-series dataset as the source.
+- The schema matches the commonly used Pima Indians Diabetes dataset. Exact provenance of this specific local file copy and its license remain unverified;
 - Dataset description / original citation context: https://search.r-project.org/CRAN/refmans/reglogit/html/pima.html.
 
 ## 4. Reproducibility safeguards
