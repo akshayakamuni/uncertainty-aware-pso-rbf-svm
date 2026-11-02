@@ -89,6 +89,7 @@ silently reconcile or overwrite historical tables.
 
 ## Data and claims limitations
 
+
 Raw dataset checksums are recorded in `docs/raw_dataset_checksums.md`. Exact
 provenance/version and license terms for the local Pima CSV remain
 unverified; licenses/redistribution terms for all local data should be
