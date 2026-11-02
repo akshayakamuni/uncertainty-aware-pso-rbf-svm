@@ -65,6 +65,7 @@ Historical v2 TruncatedSVD used `random_state: null`; these historical outputs w
 
 ## Figure files
 
+
 - `figures/lambda_metric_changes.png`
 - `figures/dataset_lambda_comparisons.png`
 - `figures/absolute_generalization_gap.png`
